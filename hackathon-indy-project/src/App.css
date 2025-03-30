@@ -1,0 +1,29 @@
+/* Font declaration - Add this at the top of your App.css file */
+@font-face {
+  font-family: 'Proximanova';
+  src: url('../src/proximanova_regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* This helps with text flickering during font load */
+}
+
+/* Root styles - notice the font-family is set only as Proximanova */
+:root {
+  --font-primary: 'Proximanova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+  /* Keep your existing root variables */
+  --bg-color: #121212;
+  --primary-color: #2a2a2a;
+  --accent-color: #4a4a4a;
+  /* ... other variables ... */
+}
+
+/* Base styles - use the variable instead of hardcoding the font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+}
+
+/* The rest of your CSS... */

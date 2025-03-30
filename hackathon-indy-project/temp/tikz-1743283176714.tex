@@ -1,0 +1,14 @@
+
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+
+\begin{document}
+\begin{tikzpicture}
+\draw[->] (-0.5,0) -- (4,0) node[right] {$x$};
+\draw[->] (0,-0.5) -- (0,4) node[above] {$y$};
+\draw[domain=0:3, smooth, variable=\x, blue, thick] plot ({\x}, {\x*\x});
+\node at (2,3) {$y = x^2$};
+\end{tikzpicture}
+\end{document}
+  

@@ -1,0 +1,79 @@
+:root {
+    --clr-1: #0a1128; /* Dark blue */
+    --clr-2: #1c0b43; /* Dark purple */
+    --clr-3: #7b2cbf; /* Purple */
+    --clr-4: #e0aaff; /* Light pink/purple */
+    --clr-5: #ffffff; /* White */
+}
+
+.special-card {
+    background: var(--clr-2);
+    display: grid;
+    place-content: center;
+    position: relative;
+    z-index: 1;
+    border-radius: 0.5rem;
+    border: 2px solid var(--clr-4);
+    box-shadow: 0 0 10px var(--clr-4);
+    transition: all 0.3s ease; /* Added smooth transition */
+}
+
+.special-card:hover {
+    background: var(--clr-1); /* Darkened background */
+    box-shadow: 0 0 15px var(--clr-4);
+}
+
+.special-card:before,
+.special-card:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg,
+            var(--clr-1),
+            var(--clr-3),
+            var(--clr-4),
+            var(--clr-5),
+            var(--clr-3));
+    animation: animate 4s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.3;
+    border-radius: 0.5rem;
+}
+
+@keyframes animate {
+    0% {
+        filter: blur(6px) hue-rotate(0deg);
+    }
+    100% {
+        filter: blur(6px) hue-rotate(360deg);
+    }
+}
+
+.special-text {
+    position: relative;
+    z-index: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--clr-2);
+    color: white;
+    display: inline-block;
+}
+
+.special-text:before,
+.special-text:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    background: linear-gradient(45deg,
+            var(--clr-1),
+            var(--clr-3),
+            var(--clr-4),
+            var(--clr-5),
+            var(--clr-3));
+    animation: animate 4s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.7;
+}
